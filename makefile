@@ -2,9 +2,9 @@ CC = g++ -std=c++11
 DEBUG = -ggdb
 FLAGS = -march=native -pipe -W -Wall -pedantic
 LFLAGS = # Replace with project flags
-VPATH = ./src
+VPATH = ./src # Attach additional directories with "<dir>:<dir>"
 
-SOURCES = # Replace with project "*.cpp" files
+SOURCES = ./src/main.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 OBJECTS_DEBUG = $(SOURCES:.cpp=$(DEBUG).o)
