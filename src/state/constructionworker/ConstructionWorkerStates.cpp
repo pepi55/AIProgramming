@@ -37,3 +37,37 @@ void GoToDepotAndCollectBricks::execute(ConstructionWorker *worker) {
 }
 
 // END GO_TO_DEPOT_AND_COLLECT_BRICKS
+
+// VISIT_CONSTRUCTION_SITE_AND_DROP_BRICKS
+
+VisitConstructionSiteAndDropBricks *VisitConstructionSiteAndDropBricks::instance(void) {
+	static VisitConstructionSiteAndDropBricks instance;
+
+	return &instance;
+}
+
+void VisitConstructionSiteAndDropBricks::enter(ConstructionWorker *worker) {
+	if (worker->getLocation() != CONSTRUCTION_SITE) {
+		fprintf(stdout, "%s: Going to drop off the bricks I collected!\n", GetNameOfEntity(worker->ID()).c_str());
+
+		worker->changeLocation(CONSTRUCTION_SITE);
+	}
+}
+
+void VisitConstructionSiteAndDropBricks::execute(ConstructionWorker *worker) {
+	//Drop off them brix
+	worker->addToBricksContributed(worker->getBricksCarried());
+	worker->setBricksCarried(0);
+
+	fprintf(stdout, "%s: Dropping off bricks. Total bricks at site: %i\n", GetNameOfEntity(worker->ID()).c_str(), worker->bricksContributed());
+
+	if (worker->bricksContributed() >= ConstWorkerComfortLevel) {
+		fprintf(stdout, "%s: Enough hard work for today...\n", GetNameOfEntity(worker->ID()).c_str());
+
+		worker->changeState(GoHomeAndSleep::instance());
+	} else {
+		worker->changeState(GoToDepotAndCollectBricks::instance());
+	}
+}
+
+// END VISIT_CONSTRUCTION_SITE_AND_SHIT_BRICKS
