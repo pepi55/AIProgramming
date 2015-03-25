@@ -1,1 +1,6 @@
-#include <iostream>
+#include "misc/GenericUtils.hpp"
+
+int main (void) {
+
+	return 0;
+}

@@ -2,9 +2,12 @@ CC = g++ -std=c++11
 DEBUG = -ggdb
 FLAGS = -march=native -pipe -W -Wall -pedantic
 LFLAGS = # Replace with project flags
-VPATH = ./src # Attach additional directories with "<dir>:<dir>"
+VPATH = ./src:./src/state/constructionworker:./src/entity:./src/entity/constructionworker
 
-SOURCES = ./src/main.cpp
+SOURCES = ./src/main.cpp \
+					./src/state/constructionworker/ConstructionWorkerStates.cpp \
+					./src/entity/BaseGameEntity.cpp \
+					./src/entity/constructionworker/ConstructionWorker.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 OBJECTS_DEBUG = $(SOURCES:.cpp=$(DEBUG).o)
