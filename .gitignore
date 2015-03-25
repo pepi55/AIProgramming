@@ -32,3 +32,6 @@
 
 # Build directory
 build/
+
+# Pyc files
+*.pyc
