@@ -29,3 +29,6 @@
 
 # Vim swap files
 *.swp
+
+# Build directory
+build/
