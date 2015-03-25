@@ -51,8 +51,8 @@ class ConstructionWorker : public BaseGameEntity {
 		bool handsFull(void) const;
 
 		bool tired(void) const;
-		void decreaseFatigue(int value);
-		void increaseFatigue(int value);
+		void decreaseFatigue(int value = 1);
+		void increaseFatigue(int value = 1);
 
 		int bricksContributed(void) const;
 		void setBricksContributed(const int val);

@@ -31,7 +31,6 @@ class GoToDepotAndCollectBricks : public State {
  * the worker will go home, otherwise he'll keep bringing
  * in new bricks.
  */
-
 class VisitConstructionSiteAndDropBricks : public State {
 	private:
 		VisitConstructionSiteAndDropBricks(void) {};

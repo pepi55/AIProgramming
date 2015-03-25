@@ -73,3 +73,20 @@ bool ConstructionWorker::handsFull(void) const {
 void ConstructionWorker::increaseFatigue(int value) {
 	m_fatigue += value;
 }
+
+void ConstructionWorker::decreaseFatigue(int value) {
+	m_fatigue -= value;
+}
+
+int ConstructionWorker::bricksContributed(void) const {
+	return m_bricks_contributed;
+}
+
+void ConstructionWorker::setBricksContributed(const int val) {
+	m_bricks_contributed = val;
+}
+
+void ConstructionWorker::buyAndEatFood(void) {
+	m_hunger = 0;
+	//m_bricks_contributed -= 2;
+}
