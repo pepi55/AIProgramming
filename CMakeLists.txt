@@ -4,9 +4,12 @@ project ("Construction Worker" CXX)
 set (ConstructionWorker_VERSION_MAJOR 0)
 set (ConstructionWorker_VERSION_MINOR 1)
 
-include_directories (./src)
-
-add_executable (ConstructionWorker ./src/main.cpp
+set (PROJECT_SRCS ./src/main.cpp
 	./src/entity/BaseGameEntity.cpp
 	./src/entity/constructionworker/ConstructionWorker.cpp
-	./src/state/constructionworker/ConstructionWorkerStates.cpp)
+	./src/state/constructionworker/ConstructionWorkerStates.cpp
+	)
+
+include_directories (./src)
+
+add_executable (ConstructionWorker ${PROJECT_SRCS})
