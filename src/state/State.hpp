@@ -5,7 +5,8 @@ class ConstructionWorker;
 
 class State {
 	public:
-		virtual ~State(void);
+		State(void) {}
+		virtual ~State(void) {}
 
 		//Execute when entering a new state
 		virtual void enter(ConstructionWorker*) = 0;
