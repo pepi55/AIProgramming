@@ -15,4 +15,4 @@ endmacro()
 
 add_subdirectory (./entity)
 
-add_executable (FSM_AI ./.main.cpp)
+add_executable (FSM_AI ./main.cpp)
