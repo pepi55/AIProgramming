@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <iostream>
-#include <bitset>
+
+int arrayLength(int array[]);
 
 int main(void) {
 	fprintf(stdout, "size of char %i\n", sizeof(char));
@@ -11,5 +11,23 @@ int main(void) {
 	fprintf(stdout, "size of double %i\n", sizeof(double));
 	fprintf(stdout, "size of wchar_t %i\n", sizeof(wchar_t));
 
+	int array[] = {1, 2, 3};
+
+	fprintf(stdout, "\narray len = %i\n", arrayLength(array));
+
 	return 0;
+}
+
+int arrayLength(int array[]) {
+	int result = 0;
+
+	while (array[result]) {
+		if (array[result + 1]) {
+			result++;
+		} else {
+			break;
+		}
+	}
+
+	return result;
 }
