@@ -1,14 +1,21 @@
-#include "misc/GenericUtils.hpp"
-#include "entity/constructionworker/ConstructionWorker.hpp"
-#include "enum/Locations.hpp"
-#include "entity/EntityNames.hpp"
+#include <stdio.h>
 
-int main (void) {
-	ConstructionWorker worker(ent_construction_worker_Bob);
+int arrayLength(int array[]);
 
-	for (int i = 0; i < 20; ++i) {
-		worker.update();
+int main(void) {
+	return 0;
+}
+
+int arrayLength(int array[]) {
+	int result = 0;
+
+	while (array[result]) {
+		if (array[result + 1]) {
+			result++;
+		} else {
+			break;
+		}
 	}
 
-	return 0;
+	return result;
 }
