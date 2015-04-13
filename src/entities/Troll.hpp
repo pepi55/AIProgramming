@@ -3,10 +3,25 @@
 
 #include "../states/State.hpp"
 
+class State;
+
 class Troll {
 	public:
+		Troll(void);
+		~Troll(void);
+
+		bool isAngered(void);
+		bool isPeaceful(void);
+
+		void hitEnemy(void);
+		void getDisturbed(void);
+
+		void update(void);
+		void changeState(State *const newState);
+
 	private:
-		State *mNewState;
+		int anger;
+		State *mCurrentState;
 };
 
 #endif

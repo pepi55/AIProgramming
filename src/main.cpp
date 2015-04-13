@@ -1,9 +1,17 @@
 #include <stdio.h>
-#include "states/State.hpp"
+#include "states/troll/TrollState.hpp"
+#include "entities/Troll.hpp"
 
 int arrayLength(int array[]);
 
 int main(void) {
+	Troll bigGuy;
+	bigGuy.changeState(new TrollStatePeaceful());
+
+	for (int i = 0; i < 50; ++i) {
+		bigGuy.update();
+	}
+
 	return 0;
 }
 
