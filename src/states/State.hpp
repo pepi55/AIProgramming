@@ -8,7 +8,7 @@ class Troll;
 class State {
 	public:
 		State(void) {};
-		//virtual ~State(void) = 0;
+		virtual ~State(void) {};
 
 		virtual void execute(Troll *troll) = 0;
 };

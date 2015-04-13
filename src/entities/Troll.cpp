@@ -1,7 +1,10 @@
 #include "Troll.hpp"
+#include <typeinfo>
 #include <stdio.h>
 
 Troll::Troll(void) {
+	fprintf(stdout, "%s\n", "Troll constructor");
+
 	mCurrentState = NULL;
 	anger = 0;
 }
@@ -36,11 +39,15 @@ void Troll::hitEnemy(void) {
 void Troll::getDisturbed(void) {
 	fprintf(stdout, "UGH THOSE ANNOYING FAERIES!\n");
 
-	anger += 0.9;
+	anger += 2;
 }
 
 void Troll::update() {
-	mCurrentState->execute(this);
+	if (mCurrentState) {
+		mCurrentState->execute(this);
+	} else {
+		fprintf(stderr, "mCurrentState is not a valid state!\n");
+	}
 }
 
 void Troll::changeState(State *const newState) {

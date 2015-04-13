@@ -6,7 +6,7 @@ int arrayLength(int array[]);
 
 int main(void) {
 	Troll bigGuy;
-	bigGuy.changeState(new TrollStatePeaceful());
+	bigGuy.changeState(new TrollStateAttack());
 
 	for (int i = 0; i < 50; ++i) {
 		bigGuy.update();

@@ -9,6 +9,8 @@ class TrollStateAttack : public State {
 		TrollStateAttack(void);
 		~TrollStateAttack(void);
 
+		void checkCurrentState(void);
+
 		void execute(Troll *troll);
 };
 
@@ -16,6 +18,8 @@ class TrollStatePeaceful : public State {
 	public:
 		TrollStatePeaceful(void);
 		~TrollStatePeaceful(void);
+
+		void checkCurrentState(void);
 
 		void execute(Troll *troll);
 };
