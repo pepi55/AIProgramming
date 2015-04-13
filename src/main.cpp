@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "states/State.hpp"
 
 int arrayLength(int array[]);
 

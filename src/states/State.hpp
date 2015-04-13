@@ -4,6 +4,6 @@
 class State {
 	public:
 		virtual void execute(Troll *troll) = 0;
-}
+};
 
 #endif
