@@ -1,10 +1,7 @@
 #include "Troll.hpp"
-#include <typeinfo>
 #include <stdio.h>
 
 Troll::Troll(void) {
-	fprintf(stdout, "%s\n", "Troll constructor");
-
 	mCurrentState = NULL;
 	anger = 0;
 }
