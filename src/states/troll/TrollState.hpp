@@ -2,28 +2,28 @@
 #define TROLL_STATE_HPP
 
 #include "../State.hpp"
-#include "../../entities/Troll.hpp"
+#include "../../entities/troll/Troll.hpp"
 
 class TrollStateAttack : public State {
 	public:
-		TrollStateAttack(void);
-		TrollStateAttack(const TrollStateAttack& ctor);
-		~TrollStateAttack(void);
+		TrollStateAttack (void);
+		TrollStateAttack (const TrollStateAttack& ctor);
+		~TrollStateAttack (void);
 
-		void checkCurrentState(void);
+		void checkCurrentState (void);
 
-		void execute(Troll *troll);
+		void execute (Troll *troll);
 };
 
 class TrollStatePeaceful : public State {
 	public:
-		TrollStatePeaceful(void);
-		TrollStatePeaceful(const TrollStatePeaceful& ctor);
-		~TrollStatePeaceful(void);
+		TrollStatePeaceful (void);
+		TrollStatePeaceful (const TrollStatePeaceful& ctor);
+		~TrollStatePeaceful (void);
 
-		void checkCurrentState(void);
+		void checkCurrentState (void);
 
-		void execute(Troll *troll);
+		void execute (Troll *troll);
 };
 
 #endif

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "states/troll/TrollState.hpp"
-#include "entities/Troll.hpp"
+#include "entities/troll/Troll.hpp"
 
-int arrayLength(int array[]);
+int arrayLength (int array[]);
 
 int main(void) {
 	Troll bigGuy;
