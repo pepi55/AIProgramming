@@ -3,6 +3,7 @@
 
 /*	ATTACK STATE	*/
 TrollStateAttack::TrollStateAttack(void) {
+	checkCurrentState();
 }
 
 TrollStateAttack::~TrollStateAttack(void) {
@@ -13,8 +14,6 @@ void TrollStateAttack::checkCurrentState(void) {
 }
 
 void TrollStateAttack::execute(Troll *troll) {
-	checkCurrentState();
-
 	if (troll->isAngered()) {
 		troll->hitEnemy();
 	} else if (troll->isPeaceful()) {
@@ -25,6 +24,7 @@ void TrollStateAttack::execute(Troll *troll) {
 
 /*	PEACEFUL STATE	*/
 TrollStatePeaceful::TrollStatePeaceful(void) {
+	checkCurrentState();
 }
 
 TrollStatePeaceful::~TrollStatePeaceful(void) {
@@ -35,8 +35,6 @@ void TrollStatePeaceful::checkCurrentState(void) {
 }
 
 void TrollStatePeaceful::execute(Troll *troll) {
-	checkCurrentState();
-
 	if (troll->isPeaceful()) {
 		troll->getDisturbed();
 	} else if (troll->isAngered()) {

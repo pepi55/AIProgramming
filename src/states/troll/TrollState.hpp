@@ -7,6 +7,7 @@
 class TrollStateAttack : public State {
 	public:
 		TrollStateAttack(void);
+		TrollStateAttack(const TrollStateAttack& ctor);
 		~TrollStateAttack(void);
 
 		void checkCurrentState(void);
@@ -17,6 +18,7 @@ class TrollStateAttack : public State {
 class TrollStatePeaceful : public State {
 	public:
 		TrollStatePeaceful(void);
+		TrollStatePeaceful(const TrollStatePeaceful& ctor);
 		~TrollStatePeaceful(void);
 
 		void checkCurrentState(void);
