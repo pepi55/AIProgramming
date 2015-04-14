@@ -13,22 +13,22 @@ Troll::~Troll(void) {
 
 bool Troll::isAngered(void) {
 	if (anger > 0) {
-		fprintf(stdout, "%s\n", "MakeAngryCheck");
+		//fprintf(stdout, "%s\n", "MakeAngryCheck");
 
 		return true;
 	}
-	fprintf(stdout, "Anger lvl: %i\n", anger);
+	//fprintf(stdout, "Anger lvl: %i\n", anger);
 
 	return false;
 }
 
 bool Troll::isPeaceful(void) {
 	if (anger < 0) {
-		fprintf(stdout, "%s\n", "MakePeacefulCheck");
+		//fprintf(stdout, "%s\n", "MakePeacefulCheck");
 
 		return true;
 	}
-	fprintf(stdout, "Anger lvl: %i\n", anger);
+	//fprintf(stdout, "Anger lvl: %i\n", anger);
 
 	return false;
 }

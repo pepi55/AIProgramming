@@ -10,7 +10,7 @@ TrollStateAttack::~TrollStateAttack(void) {
 }
 
 void TrollStateAttack::checkCurrentState(void) {
-	fprintf(stdout, "This is TrollAttackState\n");
+	//fprintf(stdout, "This is TrollAttackState\n");
 }
 
 void TrollStateAttack::execute(Troll *troll) {
@@ -31,7 +31,7 @@ TrollStatePeaceful::~TrollStatePeaceful(void) {
 }
 
 void TrollStatePeaceful::checkCurrentState(void) {
-	fprintf(stdout, "This is TrollPeacefulState\n");
+	//fprintf(stdout, "This is TrollPeacefulState\n");
 }
 
 void TrollStatePeaceful::execute(Troll *troll) {
