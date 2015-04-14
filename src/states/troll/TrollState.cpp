@@ -3,14 +3,9 @@
 
 /*	ATTACK STATE	*/
 TrollStateAttack::TrollStateAttack(void) {
-	checkCurrentState();
 }
 
 TrollStateAttack::~TrollStateAttack(void) {
-}
-
-void TrollStateAttack::checkCurrentState(void) {
-	//fprintf(stdout, "This is TrollAttackState\n");
 }
 
 void TrollStateAttack::execute(Troll *troll) {
@@ -24,14 +19,9 @@ void TrollStateAttack::execute(Troll *troll) {
 
 /*	PEACEFUL STATE	*/
 TrollStatePeaceful::TrollStatePeaceful(void) {
-	checkCurrentState();
 }
 
 TrollStatePeaceful::~TrollStatePeaceful(void) {
-}
-
-void TrollStatePeaceful::checkCurrentState(void) {
-	//fprintf(stdout, "This is TrollPeacefulState\n");
 }
 
 void TrollStatePeaceful::execute(Troll *troll) {
