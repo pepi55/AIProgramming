@@ -9,6 +9,10 @@ BaseGameEntity::BaseGameEntity(int id) {
 BaseGameEntity::~BaseGameEntity(void) {
 }
 
+int BaseGameEntity::getID(void) const {
+	return mID;
+}
+
 void BaseGameEntity::setID(int value) {
 	if (value >= mNextValidID) {
 		mID = value;

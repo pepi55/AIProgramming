@@ -1,3 +1,4 @@
 src/main.cpp
-src/entities/Troll.cpp
+src/entities/BaseGameEntity.cpp
+src/entities/troll/Troll.cpp
 src/states/troll/TrollState.cpp
