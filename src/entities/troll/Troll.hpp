@@ -8,7 +8,7 @@ class State;
 
 class Troll : public BaseGameEntity {
 	public:
-		Troll (void);
+		Troll (int id);
 		~Troll (void);
 
 		bool isAngered (void);

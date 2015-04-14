@@ -1,9 +1,9 @@
-#include "Troll.hpp"
 #include <stdio.h>
 
-Troll::Troll(void) {
-	mCurrentState = NULL;
-	anger = 1;
+#include "../../states/troll/TrollState.hpp"
+#include "Troll.hpp"
+
+Troll::Troll(int id) : BaseGameEntity(id), anger(-1), mCurrentState(new TrollStatePeaceful()) {
 }
 
 Troll::~Troll(void) {
