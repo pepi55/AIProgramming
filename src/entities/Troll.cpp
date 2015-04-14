@@ -3,7 +3,7 @@
 
 Troll::Troll(void) {
 	mCurrentState = NULL;
-	anger = 0;
+	anger = 1;
 }
 
 Troll::~Troll(void) {
@@ -12,17 +12,23 @@ Troll::~Troll(void) {
 }
 
 bool Troll::isAngered(void) {
-	if (anger == 10) {
+	if (anger > 0) {
+		fprintf(stdout, "%s\n", "MakeAngryCheck");
+
 		return true;
 	}
+	fprintf(stdout, "Anger lvl: %i\n", anger);
 
 	return false;
 }
 
 bool Troll::isPeaceful(void) {
-	if (anger == 0) {
+	if (anger < 0) {
+		fprintf(stdout, "%s\n", "MakePeacefulCheck");
+
 		return true;
 	}
+	fprintf(stdout, "Anger lvl: %i\n", anger);
 
 	return false;
 }
@@ -30,7 +36,7 @@ bool Troll::isPeaceful(void) {
 void Troll::hitEnemy(void) {
 	fprintf(stdout, "ME IS ANGRY! ME BASH FOE!\n");
 
-	anger--;
+	anger -= 2;
 }
 
 void Troll::getDisturbed(void) {
