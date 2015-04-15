@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "states/troll/TrollState.hpp"
 #include "entities/troll/Troll.hpp"
 
