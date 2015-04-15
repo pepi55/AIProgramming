@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <string>
 
 #include "states/troll/TrollState.hpp"
 #include "entities/troll/Troll.hpp"
 #include "enums/EntityNames.hpp"
 
+std::string getEntityName (int name);
 int arrayLength (int array[]);
 
 int main(void) {
@@ -14,6 +16,19 @@ int main(void) {
 	}
 
 	return 0;
+}
+
+std::string getEntityName (int name) {
+	switch (name) {
+		case EDGAR:
+			return "Edgar";
+
+		case HELLEN:
+			return "Hellen";
+
+		default:
+			return "Unknown";
+	}
 }
 
 int arrayLength(int array[]) {
