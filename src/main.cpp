@@ -2,15 +2,12 @@
 
 #include "states/troll/TrollState.hpp"
 #include "entities/troll/Troll.hpp"
-
-enum EntityNames {
-	TROLL_GUY
-};
+#include "enums/EntityNames.hpp"
 
 int arrayLength (int array[]);
 
 int main(void) {
-	Troll bigGuy(TROLL_GUY);
+	Troll bigGuy(EDGAR);
 
 	for (int i = 0; i < 50; ++i) {
 		bigGuy.update();
