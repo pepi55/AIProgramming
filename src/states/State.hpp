@@ -10,7 +10,7 @@ class State {
 		State (void) {};
 		virtual ~State (void) {};
 
-		virtual void execute (Troll *troll) = 0;
+		virtual void execute (Troll *) = 0;
 };
 
 #endif

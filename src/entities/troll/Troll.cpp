@@ -7,7 +7,7 @@ Troll::Troll(int id) : BaseGameEntity(id), anger(-1), mCurrentState(new TrollSta
 }
 
 Troll::~Troll(void) {
-	mCurrentState = NULL;
+	delete mCurrentState;
 	anger = 0;
 }
 
