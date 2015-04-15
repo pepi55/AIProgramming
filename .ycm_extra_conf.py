@@ -62,17 +62,15 @@ flags = [
 #'-isystem',
 #'../BoostParts',
 '-isystem',
-'/usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include/g++-v4',
+'/usr/lib/gcc/x86_64-pc-linux-gnu/4.8.4/include/g++-v4',
 '-isystem',
-'/usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include/g++-v4/x86_64-pc-linux-gnu',
+'/usr/lib/gcc/x86_64-pc-linux-gnu/4.8.4/include/g++-v4/x86_64-pc-linux-gnu',
 '-isystem',
-'/usr/lib/gcc/x86_64-pc-linux-gnu/4.7.3/include/g++-v4/backward',
+'/usr/lib/gcc/x86_64-pc-linux-gnu/4.8.4/include/g++-v4/backward',
 '-isystem',
-'/usr/bin/../lib/clang/3.4/include',
+'/usr/bin/../lib/clang/3.5.0/include',
 '-isystem',
 '/usr/include',
-'-I',
-'/usr/include/freetype2'
 # This path will only work on OS X, but extra paths that don't exist are not
 # harmful
 #'/System/Library/Frameworks/Python.framework/Headers',
@@ -80,10 +78,10 @@ flags = [
 #'../llvm/include',
 #'-isystem',
 #'../llvm/tools/clang/include',
-#'-I',
-#'.',
-#'-I',
-#'./ClangCompleter',
+'-I',
+'.',
+'-I',
+'./ClangCompleter',
 #'-isystem',
 #'./tests/gmock/gtest',
 #'-isystem',
@@ -189,10 +187,10 @@ def FlagsForFile( filename, **kwargs ):
     # NOTE: This is just for YouCompleteMe; it's highly likely that your project
     # does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR
     # ycm_extra_conf IF YOU'RE NOT 100% SURE YOU NEED IT.
-    try:
-      final_flags.remove( '-stdlib=libc++' )
-    except ValueError:
-      pass
+    #try:
+    #  final_flags.remove( '-stdlib=libc++' )
+    #except ValueError:
+    #  pass
   else:
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )

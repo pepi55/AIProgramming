@@ -10,7 +10,9 @@ class TrollStateAttack : public State {
 		TrollStateAttack (const TrollStateAttack& ctor);
 		~TrollStateAttack (void);
 
+		void enter (Troll *troll);
 		void execute (Troll *troll);
+		void exit (Troll *troll);
 };
 
 class TrollStatePeaceful : public State {
@@ -19,7 +21,9 @@ class TrollStatePeaceful : public State {
 		TrollStatePeaceful (const TrollStatePeaceful& ctor);
 		~TrollStatePeaceful (void);
 
+		void enter (Troll *troll);
 		void execute (Troll *troll);
+		void exit (Troll *troll);
 };
 
 #endif

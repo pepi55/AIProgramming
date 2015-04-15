@@ -19,12 +19,8 @@ int main(void) {
 int arrayLength(int array[]) {
 	int result = 0;
 
-	while (array[result]) {
-		if (array[result + 1]) {
-			result++;
-		} else {
-			break;
-		}
+	while (array[result + 1]) {
+		result++;
 	}
 
 	return result;
