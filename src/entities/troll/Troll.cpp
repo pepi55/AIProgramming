@@ -3,46 +3,15 @@
 #include "../../states/troll/TrollState.hpp"
 #include "Troll.hpp"
 
-Troll::Troll(int id) : BaseGameEntity(id), anger(-1), mCurrentState(new TrollStatePeaceful()) {
+Troll::Troll(int id) : BaseGameEntity(id), hunger(0), fatigue(0), food(0), mCurrentState(new TrollStatePeaceful()) {
 }
 
 Troll::~Troll(void) {
+	hunger = 0;
+	fatigue = 0;
+	food = 0;
+
 	delete mCurrentState;
-	anger = 0;
-}
-
-bool Troll::isAngered(void) {
-	if (anger > 0) {
-		//fprintf(stdout, "%s\n", "MakeAngryCheck");
-
-		return true;
-	}
-	//fprintf(stdout, "Anger lvl: %i\n", anger);
-
-	return false;
-}
-
-bool Troll::isPeaceful(void) {
-	if (anger < 0) {
-		//fprintf(stdout, "%s\n", "MakePeacefulCheck");
-
-		return true;
-	}
-	//fprintf(stdout, "Anger lvl: %i\n", anger);
-
-	return false;
-}
-
-void Troll::hitEnemy(void) {
-	fprintf(stdout, "ME IS ANGRY! ME BASH FOE!\n");
-
-	anger -= 2;
-}
-
-void Troll::getDisturbed(void) {
-	fprintf(stdout, "UGH THOSE ANNOYING FAERIES!\n");
-
-	anger += 2;
 }
 
 void Troll::update() {

@@ -3,6 +3,7 @@
 
 #include "../../states/State.hpp"
 #include "../BaseGameEntity.hpp"
+#include "../../enums/Locations.hpp"
 
 class State;
 
@@ -11,17 +12,15 @@ class Troll : public BaseGameEntity {
 		Troll (int id);
 		~Troll (void);
 
-		bool isAngered (void);
-		bool isPeaceful (void);
-
-		void hitEnemy (void);
-		void getDisturbed (void);
-
 		void update (void);
 		void changeState (State *const newState);
 
 	private:
-		int anger;
+		int hunger;
+		int fatigue;
+		int food; //Gathered
+
+		Locations mLocation;
 		State *mCurrentState;
 };
 
