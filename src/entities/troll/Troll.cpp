@@ -3,13 +3,13 @@
 #include "../../states/troll/TrollState.hpp"
 #include "Troll.hpp"
 
-Troll::Troll(int id) : BaseGameEntity(id), hunger(0), fatigue(0), food(0), mCurrentState(new TrollStatePeaceful()) {
+Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodGathered(0), mCurrentState(new TrollStatePeaceful()) {
 }
 
 Troll::~Troll(void) {
-	hunger = 0;
-	fatigue = 0;
-	food = 0;
+	mHunger = 0;
+	mFatigue = 0;
+	mFoodGathered = 0;
 
 	delete mCurrentState;
 }
@@ -29,4 +29,28 @@ void Troll::changeState(State *const newState) {
 	} else {
 		fprintf(stderr, "newState is not a valid state!\n");
 	}
+}
+
+int Troll::getHunger(void) {
+	return mHunger;
+}
+
+void Troll::setHunger(int hunger) {
+	mHunger = hunger;
+}
+
+int Troll::getFatigue(void) {
+	return mFatigue;
+}
+
+void Troll::setFatigue(int fatigue) {
+	mFatigue = fatigue;
+}
+
+int Troll::getFoodGathered(void) {
+	return mFoodGathered;
+}
+
+void Troll::setFoodGathered(int foodGathered) {
+	mFoodGathered = foodGathered;
 }

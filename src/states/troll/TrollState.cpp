@@ -1,5 +1,5 @@
-#include "TrollState.hpp"
 #include <stdio.h>
+#include "TrollState.hpp"
 
 /*	ATTACK STATE	*/
 TrollStateAttack::TrollStateAttack(void) {
@@ -9,17 +9,15 @@ TrollStateAttack::~TrollStateAttack(void) {
 }
 
 void TrollStateAttack::enter(Troll *troll) {
+	if (troll) {}
 }
 
 void TrollStateAttack::execute(Troll *troll) {
-	if (troll->isAngered()) {
-		troll->hitEnemy();
-	} else if (troll->isPeaceful()) {
-		troll->changeState(new TrollStatePeaceful());
-	}
+	if (troll) {}
 }
 
 void TrollStateAttack::exit(Troll *troll) {
+	if (troll) {}
 }
 /*	END ATTACK STATE	*/
 
@@ -31,16 +29,14 @@ TrollStatePeaceful::~TrollStatePeaceful(void) {
 }
 
 void TrollStatePeaceful::enter(Troll *troll) {
+	if (troll) {}
 }
 
 void TrollStatePeaceful::execute(Troll *troll) {
-	if (troll->isPeaceful()) {
-		troll->getDisturbed();
-	} else if (troll->isAngered()) {
-		troll->changeState(new TrollStateAttack());
-	}
+	if (troll) {}
 }
 
 void TrollStatePeaceful::exit(Troll *troll) {
+	if (troll) {}
 }
 /*	END PEACEFUL STATE	*/

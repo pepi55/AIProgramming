@@ -15,10 +15,19 @@ class Troll : public BaseGameEntity {
 		void update (void);
 		void changeState (State *const newState);
 
+		int getHunger (void);
+		void setHunger (int hunger);
+
+		int getFatigue (void);
+		void setFatigue (int fatigue);
+
+		int getFoodGathered (void);
+		void setFoodGathered (int foodGathered);
+
 	private:
-		int hunger;
-		int fatigue;
-		int food; //Gathered
+		int mHunger;
+		int mFatigue;
+		int mFoodGathered;
 
 		Locations mLocation;
 		State *mCurrentState;
