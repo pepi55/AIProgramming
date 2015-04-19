@@ -24,6 +24,9 @@ class Troll : public BaseGameEntity {
 		int getFoodGathered (void);
 		void setFoodGathered (int foodGathered);
 
+		Locations getLocation (void);
+		void setLocation (Locations location);
+
 	private:
 		int mHunger;
 		int mFatigue;

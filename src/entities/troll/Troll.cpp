@@ -54,3 +54,11 @@ int Troll::getFoodGathered(void) {
 void Troll::setFoodGathered(int foodGathered) {
 	mFoodGathered = foodGathered;
 }
+
+Locations Troll::getLocation(void) {
+	return mLocation;
+}
+
+void Troll::setLocation(Locations location) {
+	mLocation = location;
+}

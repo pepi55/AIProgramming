@@ -4,6 +4,7 @@
 enum Locations {
 	FLOWER_FIELD,
 	WOODS,
+	HUNTING_GROUNDS,
 	CAVE
 };
 

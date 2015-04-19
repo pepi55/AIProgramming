@@ -1,23 +1,38 @@
 #include <stdio.h>
+
 #include "TrollState.hpp"
+#include "../../enums/EntityNames.hpp"
 
 /*	ATTACK STATE	*/
-TrollStateAttack::TrollStateAttack(void) {
+TrollStateHunt::TrollStateHunt(void) {
 }
 
-TrollStateAttack::~TrollStateAttack(void) {
+TrollStateHunt::~TrollStateHunt(void) {
 }
 
-void TrollStateAttack::enter(Troll *troll) {
-	if (troll) {}
+void TrollStateHunt::enter(Troll *troll) {
+	if (troll) {
+		if (troll->getLocation() != HUNTING_GROUNDS) {
+			troll->setLocation(HUNTING_GROUNDS);
+		}
+
+		fprintf(stdout, "%s: I IS GOING HUNTING!\n", getEntityName(troll->getID()).c_str());
+	}
 }
 
-void TrollStateAttack::execute(Troll *troll) {
-	if (troll) {}
+void TrollStateHunt::execute(Troll *troll) {
+	if (troll) {
+		/*Dispatch event of dealing dmg*/
+		troll->setFoodGathered(troll->getFoodGathered() + 1);
+
+		fprintf(stdout, "%s: MMM FOOD GET!\n", getEntityName(troll->getID()).c_str());
+	}
 }
 
-void TrollStateAttack::exit(Troll *troll) {
-	if (troll) {}
+void TrollStateHunt::exit(Troll *troll) {
+	if (troll) {
+		fprintf(stdout, "%s: I IS NO MORE HUNTING...\n", getEntityName(troll->getID()).c_str());
+	}
 }
 /*	END ATTACK STATE	*/
 
@@ -29,14 +44,17 @@ TrollStatePeaceful::~TrollStatePeaceful(void) {
 }
 
 void TrollStatePeaceful::enter(Troll *troll) {
-	if (troll) {}
+	if (troll) {
+	}
 }
 
 void TrollStatePeaceful::execute(Troll *troll) {
-	if (troll) {}
+	if (troll) {
+	}
 }
 
 void TrollStatePeaceful::exit(Troll *troll) {
-	if (troll) {}
+	if (troll) {
+	}
 }
 /*	END PEACEFUL STATE	*/

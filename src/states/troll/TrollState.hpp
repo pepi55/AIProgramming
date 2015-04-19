@@ -4,11 +4,11 @@
 #include "../State.hpp"
 #include "../../entities/troll/Troll.hpp"
 
-class TrollStateAttack : public State {
+class TrollStateHunt : public State {
 	public:
-		TrollStateAttack (void);
-		TrollStateAttack (const TrollStateAttack& ctor);
-		~TrollStateAttack (void);
+		TrollStateHunt (void);
+		TrollStateHunt (const TrollStateHunt& ctor);
+		~TrollStateHunt (void);
 
 		void enter (Troll *troll);
 		void execute (Troll *troll);
