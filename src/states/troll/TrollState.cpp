@@ -25,7 +25,7 @@ void TrollStateHunt::execute(Troll *troll) {
 		/*Dispatch event of dealing dmg*/
 		troll->setFoodGathered(troll->getFoodGathered() + 1);
 
-		fprintf(stdout, "%s: MMM FOOD GET!\n", getEntityName(troll->getID()).c_str());
+		fprintf(stdout, "%s: FOOD GET!\n", getEntityName(troll->getID()).c_str());
 	}
 }
 
