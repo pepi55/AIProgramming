@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+const double minDelay = 0.25;
+
 struct Telegram {
 	int sender,
 			reciever,
