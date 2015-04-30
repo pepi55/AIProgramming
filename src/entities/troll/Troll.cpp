@@ -31,6 +31,10 @@ void Troll::changeState(State *const newState) {
 	}
 }
 
+bool Troll::isHungry(void) {
+	return mHunger >= 5;
+}
+
 int Troll::getHunger(void) {
 	return mHunger;
 }

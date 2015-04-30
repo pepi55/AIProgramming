@@ -15,6 +15,9 @@ class Troll : public BaseGameEntity {
 		void update (void);
 		void changeState (State *const newState);
 
+		bool isHungry(void);
+		bool isTired(void);
+
 		int getHunger (void);
 		void setHunger (int hunger);
 
