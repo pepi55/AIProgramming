@@ -21,8 +21,7 @@ struct Telegram {
 	}
 };
 
-template<class T>
-inline T dereferenceToType (void *p) {
+template<class T> inline T dereferenceToType (void *p) {
 	return *(T*)(p);
 }
 

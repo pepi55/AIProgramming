@@ -4,7 +4,7 @@
 #include "../State.hpp"
 #include "../../entities/troll/Troll.hpp"
 
-class TrollStateHunt : public State {
+class TrollStateHunt : public State<Troll> {
 	public:
 		TrollStateHunt (void);
 		TrollStateHunt (const TrollStateHunt& ctor);
@@ -15,7 +15,7 @@ class TrollStateHunt : public State {
 		void exit (Troll *troll);
 };
 
-class TrollStatePeaceful : public State {
+class TrollStatePeaceful : public State<Troll> {
 	public:
 		TrollStatePeaceful (void);
 		TrollStatePeaceful (const TrollStatePeaceful& ctor);

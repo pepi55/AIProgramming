@@ -3,16 +3,14 @@
 
 #include "../entities/troll/Troll.hpp"
 
-class Troll;
-
-class State {
+template <class entityType> class State {
 	public:
 		State (void) {};
 		virtual ~State (void) {};
 
-		virtual void enter (Troll *) = 0;
-		virtual void execute (Troll *) = 0;
-		virtual void exit (Troll *) = 0;
+		virtual void enter (entityType *) = 0;
+		virtual void execute (entityType *) = 0;
+		virtual void exit (entityType *) = 0;
 };
 
 #endif

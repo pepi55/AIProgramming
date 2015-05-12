@@ -1,11 +1,11 @@
 #ifndef TROLL_HPP
 #define TROLL_HPP
 
-#include "../../states/State.hpp"
+#include "../../states/StateMachine.hpp"
 #include "../BaseGameEntity.hpp"
 #include "../../enums/Locations.hpp"
 
-class State;
+template <class entityType> class State;
 
 class Troll : public BaseGameEntity {
 	public:
@@ -13,10 +13,10 @@ class Troll : public BaseGameEntity {
 		~Troll (void);
 
 		void update (void);
-		void changeState (State *const newState);
+		void changeState (State<Troll> *const newState);
 
-		bool isHungry(void);
-		bool isTired(void);
+		bool isHungry (void);
+		bool isTired (void);
 
 		int getHunger (void);
 		void setHunger (int hunger);
@@ -36,7 +36,8 @@ class Troll : public BaseGameEntity {
 		int mFoodGathered;
 
 		Locations mLocation;
-		State *mCurrentState;
+		//State<Troll> *mCurrentState;
+		StateMachine<Troll> *mStateMachine;
 };
 
 #endif

@@ -1,4 +1,5 @@
 src/main.cpp
 src/entities/BaseGameEntity.cpp
 src/entities/troll/Troll.cpp
+src/states/StateMachine.cpp
 src/states/troll/TrollState.cpp
