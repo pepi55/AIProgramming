@@ -35,3 +35,6 @@ build/
 
 # Pyc files
 *.pyc
+
+# Tags files
+tags
