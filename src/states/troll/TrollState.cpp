@@ -3,6 +3,20 @@
 #include "TrollState.hpp"
 #include "../../enums/EntityNames.hpp"
 
+/*	GLOBAL STATE	*/
+GlobalTrollState::GlobalTrollState(void) {
+}
+
+GlobalTrollState::~GlobalTrollState(void) {
+}
+
+void GlobalTrollState::enter(Troll *troll) {
+	if (troll) {
+		troll->setHunger(troll->getHunger() + 1);
+	}
+}
+/*	GLOBAL STATE	*/
+
 /*	ATTACK STATE	*/
 TrollStateHunt::TrollStateHunt(void) {
 }
@@ -27,7 +41,6 @@ void TrollStateHunt::execute(Troll *troll) {
 		if (troll->isHungry()) {
 		}
 
-		troll->setHunger(troll->getHunger() + 1);
 		troll->setFatigue(troll->getFatigue() + 1);
 		troll->setFoodGathered(troll->getFoodGathered() + 1);
 

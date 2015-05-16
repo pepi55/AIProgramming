@@ -5,7 +5,10 @@ template <class entityType> StateMachine<entityType>::StateMachine(entityType *o
 }
 
 template <class entityType> StateMachine<entityType>::~StateMachine(void) {
-	delete mOwner, mCurrentState, mPreviousState, mGlobalState;
+	delete mOwner,
+				 mCurrentState,
+				 mPreviousState,
+				 mGlobalState;
 }
 
 template <class entityType> void StateMachine<entityType>::setCurrentState(State<entityType> *state) {
