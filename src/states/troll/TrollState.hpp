@@ -13,7 +13,7 @@ class GlobalTrollState : public State<Troll> {
 		void enter (Troll *troll);
 		void execute (Troll *troll);
 		void exit (Troll *troll);
-}
+};
 
 class TrollStateHunt : public State<Troll> {
 	public:
