@@ -5,7 +5,7 @@
 #include "../BaseGameEntity.hpp"
 #include "../../enums/Locations.hpp"
 
-template <class entityType> class State;
+//template <class entityType> class State;
 
 class Troll : public BaseGameEntity {
 	public:

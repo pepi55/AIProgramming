@@ -25,6 +25,7 @@ void Troll::update() {
 	}
 }
 
+/*
 void Troll::changeState(State<Troll> *const newState) {
 	if (newState) {
 		delete mCurrentState;
@@ -33,6 +34,7 @@ void Troll::changeState(State<Troll> *const newState) {
 		fprintf(stderr, "newState is not a valid state!\n");
 	}
 }
+*/
 
 bool Troll::isHungry(void) {
 	return mHunger >= 5;
