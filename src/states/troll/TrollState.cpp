@@ -12,6 +12,12 @@ GlobalTrollState::~GlobalTrollState(void) {
 
 void GlobalTrollState::enter(Troll *troll) {
 	if (troll) {
+	}
+}
+
+void GlobalTrollState::execute(Troll *troll) {
+	if (troll) {
+		troll->setFatigue(troll->getFatigue() + 1);
 		troll->setHunger(troll->getHunger() + 1);
 	}
 }
