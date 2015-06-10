@@ -5,7 +5,7 @@
 
 template <class entityType> class State {
 	public:
-		State (void) {};
+		//State (void) {};
 		virtual ~State (void) {};
 
 		virtual void enter (entityType *) = 0;
