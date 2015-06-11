@@ -7,6 +7,7 @@ Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodGathere
 	mStateMachine = new StateMachine<Troll>(this);
 
 	mStateMachine->setCurrentState(new TrollStatePeaceful);
+	mStateMachine->setGlobalState(new GlobalTrollState);
 }
 
 Troll::~Troll(void) {

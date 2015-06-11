@@ -6,8 +6,6 @@
 #include "State.hpp"
 #include "../messages/Telegram.hpp"
 
-//template <class entityType> class State;
-
 template <class entityType> class StateMachine {
 	public:
 		StateMachine (entityType *owner);
@@ -26,6 +24,7 @@ template <class entityType> class StateMachine {
 		void changeState (State<entityType> *newState);
 		void revertState (void);
 
+		//Returns true if parameter is equal to the current state
 		bool isInState (const State<entityType> &state) const;
 
 	private:
@@ -35,5 +34,7 @@ template <class entityType> class StateMachine {
 		State<entityType> *mPreviousState;
 		State<entityType> *mGlobalState;
 };
+
+#include "StateMachine.tpp"
 
 #endif

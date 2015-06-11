@@ -1,6 +1,7 @@
 #ifndef TROLL_HPP
 #define TROLL_HPP
 
+#include "../../states/troll/TrollState.hpp"
 #include "../../states/StateMachine.hpp"
 #include "../BaseGameEntity.hpp"
 #include "../../enums/Locations.hpp"

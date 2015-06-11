@@ -51,6 +51,7 @@ template <class entityType> void StateMachine<entityType>::changeState(State<ent
 	} else {
 		mPreviousState = mCurrentState;
 		mCurrentState->exit(mOwner);
+
 		mCurrentState = newState;
 		mCurrentState->enter(mOwner);
 	}

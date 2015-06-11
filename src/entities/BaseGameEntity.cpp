@@ -16,7 +16,10 @@ int BaseGameEntity::getID(void) const {
 void BaseGameEntity::setID(int value) {
 	if (value >= mNextValidID) {
 		mID = value;
-
+		mNextValidID = mID + 1;
+	} else {
+		//Invalid ID. Defaulting to nextValidID
+		mID = mNextValidID;
 		mNextValidID = mID + 1;
 	}
 }
