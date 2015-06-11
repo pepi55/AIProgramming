@@ -1,3 +1,5 @@
+#include <typeinfo>
+
 template <class entityType> StateMachine<entityType>::StateMachine(entityType *owner) : mOwner(owner), mCurrentState(NULL), mPreviousState(NULL), mGlobalState(NULL) {
 }
 
