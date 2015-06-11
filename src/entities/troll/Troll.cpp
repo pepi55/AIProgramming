@@ -3,7 +3,7 @@
 #include "Troll.hpp"
 #include "../../states/troll/TrollState.hpp"
 
-Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodGathered(0) {
+Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodGathered(0), mLocation(CAVE) {
 	mStateMachine = new StateMachine<Troll>(this);
 
 	mStateMachine->setCurrentState(new TrollStatePeaceful);
@@ -15,27 +15,14 @@ Troll::~Troll(void) {
 	mFatigue = 0;
 	mFoodGathered = 0;
 
-	delete mStateMachine; //mCurrentState;
+	delete mStateMachine;
 }
 
-void Troll::update() {
-	if (mStateMachine) {
-		mStateMachine->update();
-	} else {
-		fprintf(stderr, "mStateMachine is not valid!\n");
-	}
-}
+void Troll::update(void) {
+	mHunger++;
 
-/*
-void Troll::changeState(State<Troll> *const newState) {
-	if (newState) {
-		delete mCurrentState;
-		mCurrentState = newState;
-	} else {
-		fprintf(stderr, "newState is not a valid state!\n");
-	}
+	mStateMachine->update();
 }
-*/
 
 bool Troll::isHungry(void) {
 	return mHunger >= 5;
@@ -71,4 +58,8 @@ Locations Troll::getLocation(void) {
 
 void Troll::setLocation(Locations location) {
 	mLocation = location;
+}
+
+StateMachine<Troll> *Troll::getStateMachine(void) const {
+	return mStateMachine;
 }

@@ -1,7 +1,6 @@
 #ifndef TROLL_HPP
 #define TROLL_HPP
 
-#include "../../states/troll/TrollState.hpp"
 #include "../../states/StateMachine.hpp"
 #include "../BaseGameEntity.hpp"
 #include "../../enums/Locations.hpp"
@@ -29,13 +28,14 @@ class Troll : public BaseGameEntity {
 		Locations getLocation (void);
 		void setLocation (Locations location);
 
+		StateMachine<Troll> *getStateMachine (void) const;
+
 	private:
 		int mHunger;
 		int mFatigue;
 		int mFoodGathered;
 
 		Locations mLocation;
-		//State<Troll> *mCurrentState;
 		StateMachine<Troll> *mStateMachine;
 };
 

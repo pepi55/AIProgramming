@@ -19,7 +19,6 @@ void GlobalTrollState::enter(Troll *troll) {
 
 void GlobalTrollState::execute(Troll *troll) {
 	if (troll) {
-		troll->setHunger(troll->getHunger() + 1);
 	}
 }
 
