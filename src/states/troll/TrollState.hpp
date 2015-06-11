@@ -2,7 +2,7 @@
 #define TROLL_STATE_HPP
 
 #include "../State.hpp"
-//#include "../../entities/troll/Troll.hpp"
+#include "../../entities/troll/Troll.hpp"
 
 class Troll;
 

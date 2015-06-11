@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "../../states/troll/TrollState.hpp"
 #include "Troll.hpp"
+#include "../../states/troll/TrollState.hpp"
 
 Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodGathered(0) {
 	mStateMachine = new StateMachine<Troll>(this);

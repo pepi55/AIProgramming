@@ -1,11 +1,11 @@
 #ifndef STATE_HPP
 #define STATE_HPP
 
-#include "../entities/troll/Troll.hpp"
+//#include "../entities/troll/Troll.hpp"
 
 template <class entityType> class State {
 	public:
-		//State (void) {};
+		State (void) {};
 		virtual ~State (void) {};
 
 		virtual void enter (entityType *) = 0;
