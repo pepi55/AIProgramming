@@ -4,8 +4,7 @@
 #include "entities/troll/Troll.hpp"
 #include "enums/EntityNames.hpp"
 
-std::string getEntityName (int name);
-int arrayLength (int array[]);
+//std::string getEntityName (int name);
 
 int main(void) {
 	Troll bigGuy(EDGAR);
@@ -15,14 +14,4 @@ int main(void) {
 	}
 
 	return 0;
-}
-
-int arrayLength(int array[]) {
-	int result = 0;
-
-	while (array[result + 1]) {
-		result++;
-	}
-
-	return result;
 }
