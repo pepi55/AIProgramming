@@ -8,7 +8,7 @@ enum Entities {
 	HELLEN
 };
 
-std::string getEntityName (int name) {
+inline std::string getEntityName (int name) {
 	switch (name) {
 		case EDGAR:
 			return "Edgar";

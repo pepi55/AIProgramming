@@ -4,8 +4,6 @@
 #include "entities/troll/Troll.hpp"
 #include "enums/EntityNames.hpp"
 
-//std::string getEntityName (int name);
-
 int main(void) {
 	Troll bigGuy(EDGAR);
 

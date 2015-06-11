@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 #include "TrollState.hpp"
+#include "../../entities/troll/Troll.hpp"
+#include "../../enums/Locations.hpp"
 #include "../../enums/EntityNames.hpp"
 
 /*	GLOBAL STATE	*/
