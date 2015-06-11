@@ -7,6 +7,8 @@
 #include "State.hpp"
 #include "../messages/Telegram.hpp"
 
+template <class entityType> class State;
+
 template <class entityType> class StateMachine {
 	public:
 		StateMachine (entityType *owner) : mOwner(owner), mCurrentState(NULL), mPreviousState(NULL), mGlobalState(NULL) {
