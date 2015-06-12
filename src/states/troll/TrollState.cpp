@@ -26,9 +26,9 @@ void GlobalTrollState::exit(Troll *troll) {
 	if (troll) {
 	}
 }
-/*	GLOBAL STATE	*/
+/*	END GLOBAL STATE	*/
 
-/*	ATTACK STATE	*/
+/*	HUNT STATE	*/
 TrollStateHunt::TrollStateHunt(void) {
 }
 
@@ -39,9 +39,9 @@ void TrollStateHunt::enter(Troll *troll) {
 	if (troll) {
 		if (troll->getLocation() != HUNTING_GROUNDS) {
 			troll->setLocation(HUNTING_GROUNDS);
-		}
 
 		fprintf(stdout, "%s: I IS GOING HUNTING!\n", getEntityName(troll->getID()).c_str());
+		}
 	}
 }
 
@@ -49,11 +49,12 @@ void TrollStateHunt::execute(Troll *troll) {
 	if (troll) {
 		/*Dispatch event of dealing dmg*/
 
+		troll->addToFoodCarried(1);
+
+		troll->increaseFatigue();
+
 		if (troll->isHungry()) {
 		}
-
-		troll->setFatigue(troll->getFatigue() + 1);
-		troll->setFoodGathered(troll->getFoodGathered() + 1);
 
 		fprintf(stdout, "%s: FOOD GET!\n", getEntityName(troll->getID()).c_str());
 	}
@@ -64,7 +65,7 @@ void TrollStateHunt::exit(Troll *troll) {
 		fprintf(stdout, "%s: I IS NO MORE HUNTING...\n", getEntityName(troll->getID()).c_str());
 	}
 }
-/*	END ATTACK STATE	*/
+/*	END HUNT STATE	*/
 
 /*	PEACEFUL STATE	*/
 TrollStatePeaceful::TrollStatePeaceful(void) {
@@ -75,16 +76,25 @@ TrollStatePeaceful::~TrollStatePeaceful(void) {
 
 void TrollStatePeaceful::enter(Troll *troll) {
 	if (troll) {
-		if (troll->getLocation() != FLOWER_FIELD) {
-			troll->setLocation(FLOWER_FIELD);
-		}
+		if (troll->getLocation() != CAVE) {
+			troll->setLocation(CAVE);
 
-		fprintf(stdout, "%s: I IS MELLOW...\n", getEntityName(troll->getID()).c_str());
+		fprintf(stdout, "%s: I IS CONTENT...\n", getEntityName(troll->getID()).c_str());
+		}
 	}
 }
 
 void TrollStatePeaceful::execute(Troll *troll) {
 	if (troll) {
+		if (!troll->isTired()) {
+			fprintf(stdout, "%s: I HAS RESTED...\n", getEntityName(troll->getID()).c_str());
+
+			troll->getStateMachine()->changeState(new TrollStateHunt);
+		} else {
+			fprintf(stdout, "%s: zZzZzZz...\n", getEntityName(troll->getID()).c_str());
+
+			troll->decreaseFatigue();
+		}
 	}
 }
 

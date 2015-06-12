@@ -15,15 +15,15 @@ class Troll : public BaseGameEntity {
 
 		bool isHungry (void);
 		bool isTired (void);
+		bool enoughFoodGathered (void);
 
-		int getHunger (void);
-		void setHunger (int hunger);
+		void addToFoodCarried (const int value);
+		void addToFoodGathered (const int value);
 
-		int getFatigue (void);
-		void setFatigue (int fatigue);
+		void decreaseFatigue (void);
+		void increaseFatigue (void);
 
-		int getFoodGathered (void);
-		void setFoodGathered (int foodGathered);
+		int foodReserve (void) const;
 
 		Locations getLocation (void);
 		void setLocation (Locations location);
@@ -33,6 +33,7 @@ class Troll : public BaseGameEntity {
 	private:
 		int mHunger;
 		int mFatigue;
+		int mFoodCarried;
 		int mFoodGathered;
 
 		Locations mLocation;

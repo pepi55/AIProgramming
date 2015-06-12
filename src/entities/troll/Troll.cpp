@@ -3,7 +3,7 @@
 #include "Troll.hpp"
 #include "../../states/troll/TrollState.hpp"
 
-Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodGathered(0), mLocation(CAVE) {
+Troll::Troll(int id) : BaseGameEntity(id), mHunger(0), mFatigue(0), mFoodCarried(0), mFoodGathered(0), mLocation(CAVE) {
 	mStateMachine = new StateMachine<Troll>(this);
 
 	mStateMachine->setCurrentState(new TrollStatePeaceful);
@@ -25,31 +25,39 @@ void Troll::update(void) {
 }
 
 bool Troll::isHungry(void) {
-	return mHunger >= 5;
+	return mHunger >= 5; //If >5 is hungry
 }
 
-int Troll::getHunger(void) {
-	return mHunger;
+bool Troll::isTired(void) {
+	return mFatigue >= 5; //If >5 is tired
 }
 
-void Troll::setHunger(int hunger) {
-	mHunger = hunger;
+bool Troll::enoughFoodGathered(void) {
+	return mFoodCarried >= 3;
 }
 
-int Troll::getFatigue(void) {
-	return mFatigue;
+void Troll::addToFoodCarried(const int value) {
+	mFoodCarried += value;
+
+	if (mFoodCarried < 0) mFoodCarried = 0;
 }
 
-void Troll::setFatigue(int fatigue) {
-	mFatigue = fatigue;
+void Troll::addToFoodGathered(const int value) {
+	mFoodGathered += value;
+
+	if (mFoodGathered < 0) mFoodGathered = 0;
 }
 
-int Troll::getFoodGathered(void) {
+void Troll::decreaseFatigue(void) {
+	mFatigue -= 1;
+}
+
+void Troll::increaseFatigue(void) {
+	mFatigue += 1;
+}
+
+int Troll::foodReserve(void) const {
 	return mFoodGathered;
-}
-
-void Troll::setFoodGathered(int foodGathered) {
-	mFoodGathered = foodGathered;
 }
 
 Locations Troll::getLocation(void) {
