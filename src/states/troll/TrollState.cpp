@@ -53,6 +53,10 @@ void TrollStateHunt::execute(Troll *troll) {
 
 		troll->increaseFatigue();
 
+		if (troll->enoughFoodGathered()) {
+			troll->getStateMachine()->changeState(new TrollStatePeaceful);
+		}
+
 		if (troll->isHungry()) {
 		}
 
