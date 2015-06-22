@@ -60,11 +60,13 @@ int Troll::foodReserve(void) const {
 	return mFoodGathered;
 }
 
+/*
 Locations Troll::getLocation(void) {
 	return mLocation;
 }
+*/
 
-void Troll::setLocation(Locations location) {
+void Troll::goToLocation(Locations location) {
 	mLocation = location;
 }
 

@@ -25,8 +25,8 @@ class Troll : public BaseGameEntity {
 
 		int foodReserve (void) const;
 
-		Locations getLocation (void);
-		void setLocation (Locations location);
+		//Locations getLocation (void);
+		void goToLocation (Locations location);
 
 		StateMachine<Troll> *getStateMachine (void) const;
 

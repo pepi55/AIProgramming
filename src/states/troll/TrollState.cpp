@@ -37,11 +37,9 @@ TrollStateHunt::~TrollStateHunt(void) {
 
 void TrollStateHunt::enter(Troll *troll) {
 	if (troll) {
-		if (troll->getLocation() != HUNTING_GROUNDS) {
-			troll->setLocation(HUNTING_GROUNDS);
+		troll->goToLocation(HUNTING_GROUNDS);
 
 		fprintf(stdout, "%s: I IS GOING HUNTING!\n", getEntityName(troll->getID()).c_str());
-		}
 	}
 }
 
@@ -80,11 +78,9 @@ TrollStatePeaceful::~TrollStatePeaceful(void) {
 
 void TrollStatePeaceful::enter(Troll *troll) {
 	if (troll) {
-		if (troll->getLocation() != CAVE) {
-			troll->setLocation(CAVE);
+		troll->goToLocation(CAVE);
 
 		fprintf(stdout, "%s: I IS CONTENT...\n", getEntityName(troll->getID()).c_str());
-		}
 	}
 }
 
